@@ -8,8 +8,8 @@ def beranda():
 
 def ambil_argumen():
     try:
-        a = float(request.args.get("a", 0))
-        b = float(request.args.get("b", 0))
+        a = float(request.args.get("a", 2))
+        b = float(request.args.get("b", 2))
         return a, b, None
     except ValueError:
         return None, None, "Input tidak valid"
