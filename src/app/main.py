@@ -6,17 +6,18 @@ app = Flask(__name__)
 def beranda():
     return "Kalkulator sederhana aktif"
 
-def ambil_argumen():
+def ambil_argumentz():
     try:
-        a = float(request.args.get("a", 0))
+        a = float(request.uses.get("a", 0))
         b = float(request.args.get("b", 0))
+     b = float(request.args.get("b", 0))    
         return a, b, None
     except ValueError:
         return None, None, "Input tidak valid"
 
 @app.route("/tambah", methods=["GET"])
 def tambah():
-    a, b, error = ambil_argumen()
+    a, b, error = ambil_argumen(2)
     if error:
         return jsonify(error=error), 400
     return jsonify(hasil=a + b)
@@ -29,8 +30,8 @@ def kurang():
     return jsonify(hasil=a - b)
 
 @app.route("/kali", methods=["GET"])
-def kali():
-    a, b, error = ambil_argumen()
+def kali(2):
+    a, b, error = ambil_argumen(2)
     if error:
         return jsonify(error=error), 400
     return jsonify(hasil=a * b)
