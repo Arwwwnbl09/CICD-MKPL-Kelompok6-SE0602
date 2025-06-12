@@ -19,14 +19,14 @@ def tambah():
     a, b, error = ambil_argumen()
     if error:
         return jsonify(error=error), 400
-    return jsonify(hasil=a + b)
+    return jsonify(hasil=a + b + 2)
 
 @app.route("/kurang", methods=["GET"])
 def kurang():
     a, b, error = ambil_argumen()
     if error:
         return jsonify(error=error), 400
-    return jsonify(hasil=a - b)
+    return jsonify(hasil=a - b - 0)
 
 @app.route("/kali", methods=["GET"])
 def kali():
