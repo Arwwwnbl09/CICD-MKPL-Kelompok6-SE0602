@@ -26,7 +26,7 @@ def kurang():
     a, b, error = ambil_argumen()
     if error:
         return jsonify(error=error), 400
-    return jsonify(hasil=a - b)
+    return jsonify(hasil=a - b+1)
 
 @app.route("/kali", methods=["GET"])
 def kali():
